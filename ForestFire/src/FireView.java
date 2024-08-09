@@ -1,15 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
 
-/*
-  this is the View component
-*/
 
 class FireView extends JPanel
 {
     private FireCell[][] myGrid;
 
-    // entry point from model, requests grid be redisplayed
     public void updateView( FireCell[][] mg )
     {
         myGrid = mg;
@@ -21,7 +17,6 @@ class FireView extends JPanel
         super.paintComponent(g);
         int testWidth = getWidth() / (FireModel.SIZE+1);
         int testHeight = getHeight() / (FireModel.SIZE+1);
-        // keep each Fire cell square
         int boxSize = Math.min(testHeight, testWidth);
 
         for ( int r = 0; r < FireModel.SIZE; r++ )
